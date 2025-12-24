@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>{% block title %}HomeDoc - Sign Up{% endblock %}</title>
+    <title>{% block title %}HomeDoc - Doctor Sign Up{% endblock %}</title>
     <style>
         body {
             margin: 0;
@@ -141,8 +141,8 @@
 
 <section class="hero-section">
     <div>
-        <h1>Rejoignez MediConnect</h1>
-        <p>Créez votre compte et accédez aux services de santé</p>
+        <h1>Inscrivez-vous en tant que Docteur</h1>
+        <p>Créez votre compte pour rejoindre MediConnect</p>
     </div>
     <div class="wave">
         <svg viewBox="0 0 500 150" preserveAspectRatio="none">
@@ -159,11 +159,12 @@
 {% endfor %}
 
 <div class="form-container">
-    <form method="post" action="/signup/">
+    <form method="post" action="/signup_doc/">
         {% csrf_token %}
-        <h4 class="text-center" style="color: #0d6efd;">User Sign Up</h4>
+        <h4 class="text-center" style="color: #0d6efd;">Doctor Sign Up</h4>
         <input type="text" name="username" placeholder="Username" required minlength="4" maxlength="25">
         <input type="email" name="email" placeholder="Email" required minlength="4" maxlength="50">
+        <input type="number" name="num" placeholder="Phone Number" required minlength="10" maxlength="12">
         <input type="password" name="pass1" placeholder="Password" required minlength="4" maxlength="25">
         <input type="password" name="pass2" placeholder="Confirm Password" required minlength="4" maxlength="25">
         <button type="submit">Submit</button>
